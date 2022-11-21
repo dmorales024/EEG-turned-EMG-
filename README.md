@@ -27,4 +27,6 @@ We based our project on the guidance of instructables.com/DIY-EEG-and-ECG-Circui
 
 ## Wiring
 *INput picture here*
+
 The above diagram details the EMG setup. The user places 3 electrodes on their head, one behind the ear, one on the cheekbone, and one right above the eyebrow. These measure the signals from the body that we can input into our circuit to then process the signal and retrieve the final product. The voltage output is put into a specific Pi Pico pin that can convert an analog signal to digital. Due to the Pi Pico's voltage input limitations, we had to use a shifting amplifier to move our centered signal from 0V to 1.6V. The output from this amplifier was put into the Pi Pico, and using a peak detection program such that we can identify the increase in amplitude upon the user blinking. Below is a picture of the physical setup. 
+
