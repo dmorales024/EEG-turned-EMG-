@@ -26,17 +26,31 @@ We based our project on the guidance of instructables.com/DIY-EEG-and-ECG-Circui
 
 
 ## Wiring
-*INput picture here*
+Insert image HEREERERERERE
+
 
 The above diagram details the EMG setup. The user places 3 electrodes on their head, one behind the ear, one on the cheekbone, and one right above the eyebrow. These measure the signals from the body that we can input into our circuit to then process the signal and retrieve the final product. The voltage output is put into a specific Pi Pico pin that can convert an analog signal to digital. Due to the Pi Pico's voltage input limitations, we had to use a shifting amplifier to move our centered signal from 0V to 1.6V. The output from this amplifier was put into the Pi Pico, and using a peak detection program such that we can identify the increase in amplitude upon the user blinking. Below is a picture of the physical setup. Note: we could have used 9V batteries in our setup, but because the voltage supply was readily available to us, we decided to use this instead to ensure a constant output of 9V and -9V to our circuit. For the shifting amplifier, we used a voltage of 0.8V as an input into one end of the op-amp which will be explained in detail later. 
 
-*INPUT picture here*
+![Screen Shot 2022-12-01 at 10 56 56](https://user-images.githubusercontent.com/114500682/205099648-694d08eb-53d7-4571-be5b-1e4fb73240a7.png)
+
 
 ## Electrode Placement for Alpha Wave Measurements
-To accurately measure alpha waves, electrodes must be placed at the left mastoid, mostly to reduce noise; another should be placed approximately one inch up and to the right of the nasion (the midline bony depression between the eyes where the frontal and two nasal bones meet); and the last electrode should be placed one inch above the inion (the projecting part of the occipital bone at the base of the skull). We attempted this setup; however, we found that to achieve the most precise measurements, we would need to either invest in a full EEG cap (kind of like a swim cap with sensors placed all throughout the different locations to acquire signals of the brain, and only connect the two required for alpha wave measurements) or alter the placement of the elctrodes. We chose to alter the placement of the electrodes, and found that the second and third electrodes should be placed on the tip of your right cheekbone and the bone right above your temple (depicted below). As we wanted to determine when the user blinked, these electrodes placement were sufficient enough to still acquire a strong signal. The voltage difference between the second and third electrode placement is used to target the amplitude difference in the alpha waves when the user blinks. See below for proposed and actual placement of EEG electrodes. 
+To accurately measure alpha waves, electrodes must be placed at the left mastoid, mostly to reduce noise (A1); another should be placed approximately one inch up and to the right of the nasion (Fp2) (the midline bony depression between the eyes where the frontal and two nasal bones meet); and the last electrode should be placed one inch above the inion (O2) (the projecting part of the occipital bone at the base of the skull). We attempted this setup; however, we found that to achieve the most precise measurements, we would need to either invest in a full EEG cap (kind of like a swim cap with sensors placed all throughout the different locations to acquire signals of the brain, and only connect the two required for alpha wave measurements) or alter the placement of the elctrodes. We chose to alter the placement of the electrodes, and found that the second and third electrodes should be placed on the tip of your right cheekbone and the bone right above your temple (depicted below). As we wanted to determine when the user blinked, these electrodes placement were sufficient enough to still acquire a strong signal. 
 
-![image](https://user-images.githubusercontent.com/114500682/205096336-ca60931f-c022-493d-a5ea-139c805f64a4.png)
-![IMG_5944](https://user-images.githubusercontent.com/114500682/205096622-996a251c-ca9e-4397-87af-59e2fc773c9c.jpg)
+
+<img src="https://user-images.githubusercontent.com/114500682/205096336-ca60931f-c022-493d-a5ea-139c805f64a4.png" width="300">
+<img src="https://user-images.githubusercontent.com/114500682/205096622-996a251c-ca9e-4397-87af-59e2fc773c9c.jpg" width="500">
+
+The voltage difference between the second and third electrode placement is used to target the amplitude difference in the alpha waves when the user blinks. See below for proposed and actual placement of EEG electrodes. 
+
+## Circuit Schematic
+![Screen Shot 2022-12-01 at 10 54 56](https://user-images.githubusercontent.com/114500682/205099170-2a750ff3-749b-48f6-9b18-ec752202f9c2.png)
+
+Our circuit has the following stages of amplification and filtering:
+ - Instrumental Amplifier (gain=8005)
+ - Notch Filter (60 Hz, gain = 156.6)
+ - High Pass Filter (7 Hz)
+ - 
 
 
 
