@@ -47,10 +47,17 @@ The voltage difference between the second and third electrode placement is used 
 ![Screen Shot 2022-12-01 at 10 54 56](https://user-images.githubusercontent.com/114500682/205099170-2a750ff3-749b-48f6-9b18-ec752202f9c2.png)
 
 Our circuit has the following stages of amplification and filtering:
- - Instrumental Amplifier (gain=8005)
+ - Instrumentation Amplifier (gain=8005)
  - Notch Filter (60 Hz, gain = 156.6)
  - High Pass Filter (7 Hz)
- - 
+ - Low Pass Filter (13 Hz) 
+ - Variable Instrumentation Amplifier (gain: 85 - 8005)
+ - Notch Filter (60 Hz, gain = 11.0)
+ - Low Pass Filter (13 Hz)
+ - Stage Amplifier to shift voltage contents up 1.6V as Pi Pico can't read in negative voltages
+
+### Instrumentation Amplifier
+
 
 
 
